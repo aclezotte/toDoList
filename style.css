@@ -1,7 +1,20 @@
-#input {
-    float: left;
+h1 {
+    text-align: center;
+    padding: 2% 0 4%;
 }
 
-#list {
-    float: right;
+#newTask {
+    margin-bottom: 1%;
+}
+
+#addTask {
+    margin-bottom: 5%;
+}
+
+h3 {
+    text-align: center;
+}
+
+.done-true {
+    text-decoration: line-through;
 }

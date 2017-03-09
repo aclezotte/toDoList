@@ -3,23 +3,38 @@
     <head>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
         <script src="scripts.js"></script>
+        <link href="lib/bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet">
         <link href="style.css" type="text/css" rel="stylesheet">
         <title>To Do List</title>
     </head>
     <body ng-app="toDoList" ng-controller="listCtrl">
-        <h1>To-Do List</h1>
-        <section id="input">
-            <h3>Add Task</h3>
-            <input type="text" ng-model="newTask">
-            <button ng-click="addTask()">Add</button>
-            <h3>Search Tasks</h3>
-            <input type="text" ng-model="search">
-        </section>
-        <section id="list">
-            <h3>Task List</h3>
-            <ul>
-                <li ng-repeat="task in tasks | filter: search">{{task}}</li>
-            </ul>
-        </section>
+        <div class="container">
+            <div class="row">
+                <h1>To-Do List</h1>
+            </div>
+            <div class="row">
+                <div class="col-xs-5">
+                    <div id="addTask">
+                        <label for="newTask">Add Task</label>
+                        <input class="form-control" id="newTask" type="text" ng-model="newTask">
+                        <button class="btn" ng-click="addTask()">Add</button><br>
+                    </div>
+                    <div id="searchDiv">
+                        <label for="search">Search Tasks</label>
+                        <input class="form-control" id="taskSearch" type="text" ng-model="taskSearch">
+                    </div>
+                </div>
+                <div class="col-xs-2"></div>
+                <div class="col-xs-5" id="list">
+                    <h3>Task List</h3>
+                    <div class="form-check" ng-repeat="task in tasks | filter: taskSearch">
+                        <label class="form-check-label done-{{task.done}}">
+                            <input class="form-check-input" type="checkbox" value="" ng-model="task.done">
+                            {{task.text}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
