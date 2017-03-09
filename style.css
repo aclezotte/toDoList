@@ -1,6 +1,21 @@
 h1 {
+    background-color: gainsboro;
+    border-radius: 10px;
     text-align: center;
-    padding: 2% 0 4%;
+    padding: 2%;
+    margin: 2% 0 4%;
+}
+
+#inputDiv {
+    background-color: gainsboro;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+#listDiv {
+    background-color: gainsboro;
+    border-radius: 10px;
+    padding: 2%;
 }
 
 #newTask {
@@ -13,6 +28,12 @@ h1 {
 
 h3 {
     text-align: center;
+}
+
+#taskList {
+    background-color: white;
+    border-radius: 5px;
+    padding: 2%;
 }
 
 .done-true {

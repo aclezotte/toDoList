@@ -1,3 +1,8 @@
+$.noConflict();
+jQuery( document ).ready(function( $ ) {
+  $.backstretch("images/seigaiha.png");
+});
+
 var app = angular.module("toDoList", []);
 
 app.controller('listCtrl', function($scope){
