@@ -28,12 +28,21 @@
                 </div>
                 <div class="col-xs-2"></div>
                 <div class="col-xs-5" id="listDiv">
-                    <h3>Task List</h3>
-                    <div id="taskList">
-                        <div class="form-check" ng-repeat="task in tasks | filter: taskSearch">
+                    <h3>To Do</h3>
+                    <div id="toDoList">
+                        <div class="form-check" ng-repeat="task in tasks | orderBy: 'text' | filter: taskSearch">
                             <label class="form-check-label done-{{task.done}}">
-                                <input class="form-check-input" type="checkbox" value="" ng-model="task.done">
+                                <input class="form-check-input" type="checkbox" value="" ng-model="task.done" ng-click="checkOff()">
                                 {{task.text}}
+                            </label>
+                        </div>
+                    </div>
+                    <h3>Complete</h3>
+                    <div id="completeList">
+                        <div class="form-check" ng-repeat="complete in completed | orderBy: 'text' | filter: taskSearch">
+                            <label class="form-check-label done-{{complete.done}}">
+                                <input class="form-check-input" type="checkbox" ng-model="complete.done" ng-click="unCheck()" checked>
+                                {{complete.text}}
                             </label>
                         </div>
                     </div>
